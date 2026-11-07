@@ -5,16 +5,13 @@
     margin: 0;
     padding: 0;
   }
-  .frammer-frame,.framer-13yxzio{
+  .frammer-frame{
     width: 100%;
     height: 100%;
     margin: 0;
     padding: 0;
     position: fixed;
     left: -2px;
-  }
-  iframe > .framer-6jWyo {
-   display:none!;    
   }
   </style>
   <head>
@@ -46,9 +43,25 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Auliya Chaerunissa - Portfolio">
     <meta name="twitter:description" content="Auliya Chaerunissa Nahtadya Salamah - Personal Portfolio">
+    
   </head>
   <body>
     <iframe id="myFrame" class="frammer-frame" src="https://auliya-chaerunnisa.framer.website/">
     </iframe>
   </body>
+  <script>
+      const iframe = document.querySelector("iframe");      
+      iframe.addEventListener("load", () => {
+        const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+      
+        const style = iframeDoc.createElement("style");
+        style.textContent = `
+          #__framer-badge-container {
+            display: none !important;
+          }
+        `;
+      
+        iframeDoc.head.appendChild(style);
+      });
+    </script>
 </html>
