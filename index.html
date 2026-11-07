@@ -13,9 +13,6 @@
     position: fixed;
     left: -2px;
   }
-     #__framer-badge-container {
-    display: none !important;
-  }
   </style>
   <head>
     <link rel="icon" type="image/png" href="./assets/favicon/favicon-96x96.png" sizes="96x96" />
@@ -52,19 +49,4 @@
     <iframe id="myFrame" class="frammer-frame" src="https://auliya-chaerunnisa.framer.website/">
     </iframe>
   </body>
-  <script>
-      const iframe = document.querySelector("iframe");      
-      iframe.addEventListener("load", () => {
-        const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-      
-        const style = iframeDoc.createElement("style");
-        style.textContent = `
-          #__framer-badge-container {
-            display: none !important;
-          }
-        `;
-      
-        iframeDoc.head.appendChild(style);
-      });
-    </script>
 </html>
